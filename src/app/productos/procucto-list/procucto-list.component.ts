@@ -46,7 +46,7 @@ export class ProcuctoListComponent {
       "Precio":140000,
       "Marca":"Wilson",
       "Color":"Rojo",
-      "Imagen":""
+      "Imagen":"https://nissanjidosha.mx/nissan/sentra/img/s-rojo-escarlata.jpg"
     }
 
   ]

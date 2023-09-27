@@ -14,12 +14,12 @@
                 <h3>Filtro:{{listFilter}}</h3>
             </div>
         </div>
-        <dive class="table-responsive">
+        <div class="table-responsive">
             <table class="table" *ngIf="productos.length">
                 <head>
                     <tr>
                         <th>
-                            <button (click)="showImage()" type="button"  class="btn btn-primary">{{muestraImg? 'Ocultar': 'Muestra'}}Imagen</button>
+                            <button (click)="showImage()" type="button"  class="btn btn-primary">{{muestrImg? 'Ocultar': 'Muestra'}}Imagen</button>
                         </th>
                         <th>Modelo</th>
                         <th>Descripcion</th>
@@ -30,8 +30,8 @@
                         <th>Imagen</th>
                     </tr>
                 </head>
-                <tbody>
-                    <tr *ngFor="let producto of productos">
+                <body>
+                    <tr *ngFor="let producto of productos | productoFilter:listFilter">
 
                         <td></td>
                         <td>{{producto.Modelo | uppercase}}</td>
@@ -41,7 +41,7 @@
                         <td>{{producto.Marca}}</td>
                         <td>{{producto.Color|uppercase}}</td>
                         <td>
-                            <img *ngIf [src]="producto.ImagenUrl"
+                            <img *ngIF="muestrImg"  [src]="producto.Imagen"
                             [title]="producto.Modelo"
                             [style.width.px]="imageWidth"
                             [style.margin.px]="imageMargin"
@@ -49,8 +49,8 @@
                         </td>
                     </tr>
 
-                </tbody>
+                </body>
             </table>
-        </dive>
+        </div>
     </div>
 </div>
